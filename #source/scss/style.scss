@@ -1,0 +1,510 @@
+//</МИКСИНЫ>========================================================================================================================================================
+@import "mixins.scss";
+//</МИКСИНЫ>========================================================================================================================================================
+
+//</ШРИФТЫ>=========================================================================================================================================================
+
+//</Подключаем шрифты>==============================================================================================================================================
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&display=swap');
+//</Подключаем шрифты>==============================================================================================================================================
+
+
+//</Шрифт по умолчанию>=============================================================================================================================================
+$fontfamily: "Akzidenz-Grotesk BQ";
+//</Шрифт по умолчанию>=============================================================================================================================================
+
+//</ШРИФТЫ>=========================================================================================================================================================
+
+
+//</ПЕРЕМЕННЫЕ>=====================================================================================================================================================
+$minwidth: 320px;
+$mw: 1070;
+$md1: $mw+12;
+$md2: 995.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>=====================================================================================================================================================
+
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>=====================================================================================================================================
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-family: $fontfamily;
+	color: #000;
+}
+body {
+	font-family: $fontfamily;
+	&.lock {
+		overflow: hidden;
+		@media (max-width: $md3+px) {
+			width: 100%;
+			position: fixed;
+			overflow: hidden;
+		}
+	}
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>=====================================================================================================================================
+
+//</ОБОЛОЧКА>=======================================================================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	@include flexbox();
+	flex-direction: column;
+	&.loaded{}
+}
+//</ОБООЧКА>=======================================================================================================================================================
+
+//</ОСНОВНАЯ СЕТКА>================================================================================================================================================
+.container {
+	max-width: $mw+px;
+	margin: 0 auto;
+	width: 100%;
+	padding: 30px;
+	@media (max-width: $md1+px) {max-width: 970px;}
+	@media (max-width: $md2+px) {max-width: 750px;}
+	@media (max-width: $md3+px) {max-width: none; padding: 0 10px;}
+}
+//</ОСНОВНАЯ СЕТКА>================================================================================================================================================
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ, СТИЛЕЙ, СТРАНИЦ И ЭЛЕМЕНТОВ>==============================================================================================================// 
+// @TODO: Add docs to mixin-name!
+//
+@import "header.scss";
+@import "footer.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ, СТИЛЕЙ, СТРАНИЦ И ЭЛЕМЕНТОВ>===============================================================================================================
+
+//</ОСНОВНОЙ БЛОК>=================================================================================================================================================
+
+// cartering //====================================================================================================================================================
+.catering {
+	@include flexbox();
+	@media (max-width: 1270px) {
+		display: block;
+	}
+	// .catering__image
+	&__image {
+		width: 50%;
+		img {
+			width: 100%;
+		}
+		@media (max-width: 1270px) {
+			width: 100%;
+		}
+	}
+	// .catering__body
+	&__body {
+		width: 50%;
+		background-color: #000;
+		color: #fff;
+		padding: 110px 0px 0px 85px;
+		@media (max-width: 1270px) {
+			width: 100%;
+			text-align: center;
+			padding: 20px 0px 20px 0px;
+		}
+	}
+	// .catering__title
+	&__title {
+		font-family: "Bebas";
+		font-size: 50px;
+		line-height: 50px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #ffffff;
+		margin: 0px 0px 30px 0px;
+	}
+	// .catering__text
+	&__text {
+		font-family: 'PT Sans';
+		font-size: 15px;
+		line-height: 25px;
+		color: #ffffff;
+		margin: 0px 0px 55px 0px;
+	}
+	// .catering__buttons
+	&__buttons {
+		font-family: "Bebas";
+		font-size: 16px;
+		line-height: 25px;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		cursor: pointer;
+		@include flexbox();
+		@media (max-width: 1270px) {
+			justify-content: center;
+		}
+	}
+	// .catering__button
+	&__button {
+		// .catering__button_1
+		&_1 {
+			width: 155px;
+			height: 50px;
+			background-color: #fff;
+			color: #000;
+			@include flexbox();
+			align-items: center;
+			justify-content: center;
+		}
+		// .catering__button_2
+		&_2 {
+			width: 155px;
+			height: 50px;
+			background-color: #000;
+			color: #fff;
+			@include flexbox();
+			align-items: center;
+			justify-content: center;
+			text-decoration: underline;
+		}
+	}
+}
+//=================================================================================================================================================================
+
+.menu {
+	margin: 70px 0px 0px 0px;
+	@media (max-width: $md4+px) {
+		margin: 30px 0px 0px 0px
+	}
+	&__row {
+		@include flexbox();
+		justify-content: center;
+		@media (max-width: $md4+px) {
+			display: block;
+		}
+	}
+	// .menu__content
+	&__content {
+		@include flexbox();
+		@media (max-width: $md2+px) {
+			display: block;
+		}
+		@media (max-width: $md4+px) {
+			@include flexbox();
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+	// .menu__column
+	&__column {
+		padding: 0px 0px 0px 5px;
+	}
+	// .menu__image
+	&__image {
+	}
+	// .menu__title
+	&__title {
+		font-family: "Bebas";
+		font-weight: 700;
+		font-size: 25px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		margin: 25px 0px 35px 0px;
+		@media (max-width: $md2+px) {
+			margin: 15px 0px 20px 0px
+		}
+	}
+	// .menu__text
+	&__text {
+		font-family: 'PT Sans';
+		font-size: 16px;
+		line-height: 25px;
+		margin: 0px 0px 30px 0px;
+		max-width: 185px;
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 15px 0px;
+		}
+	}
+	// .menu__button
+	&__button {
+		@include flexbox();
+		background-color: #000;
+		width: 155px;
+		height: 50px;
+		margin: 0px 0px 30px 0px;
+		font-family: "Bebas";
+		font-size: 15px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #ffffff;
+		align-items: center;
+		justify-content: center;
+		a {
+			background-color: #000;
+			color: #fff;
+		}
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 15px 0px;
+		}
+	}
+	// .menu__link
+	&__link {
+		font-family: Bebas;
+		font-size: 16px;
+		line-height: 25px;
+		text-decoration: underline;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		a {
+			color: #000;
+			transition: all 0.2s ease 0s;
+			&:hover {
+				color: #161162;
+			}
+		}
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 40px 0px;
+		}
+	}
+}
+// WHY //==========================================================================================================================================================
+.why {
+	margin: 70px 0px 0px 0px;
+}
+.why-top {
+	@include flexbox();
+	background-color: #000;
+	// .why-top__column
+	&__column {
+		flex: 0 0 50%;
+		@media (max-width: $md1+px) {
+			flex: 1 1 100%;
+			&:last-child {
+				display: none;
+			}
+		}
+	}
+	// .why-top__text
+	&__text {
+		text-align: right;
+		font-family: "Bebas";
+		font-size: 50px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		color: #ffffff;
+		padding: 55px 60px 55px 0px;
+		@media (max-width: $md1+px) {
+			padding: 40px 0px;
+			font-size: 50px;
+			text-align: center;
+		}
+		@media (max-width: $md2+px) {
+			padding: 30px 0px;
+			font-size: 40px;
+			text-align: center;
+		}
+	}
+	// .why-top__image
+	&__image {
+		height: 100%;
+	}
+}
+.why-body {
+	background-color: #ebebeb;
+	padding: 50px 0px 0px 0px;
+	// .why-body__column
+	&__column {
+		flex: 0 0 50%;
+		margin: 0px 0px 50px 0px;
+		@media (max-width: $md1+px) {
+			flex: 1 1 100%;
+		}
+	}
+}
+.why-body-row {
+	@include flexbox();
+	flex-wrap: wrap;
+}
+.why-body-item {
+	@include flexbox();
+	// .why-body-item__icon
+	&__icon {
+		flex: 0 0 100px;
+		height: 100px;
+		@include flexbox();
+		justify-content: center;
+		align-items: center;
+		background-color: #000;
+		img {
+			width: 70%;
+		}
+	}
+}
+.why-body-item-body {
+	@include flexbox();
+	flex-direction: column;
+	flex: 1 1 100%;
+	padding: 0px 0px 0px 11px;
+	// .why-body-item-body__title
+	&__title {
+		flex: 1 1 auto;
+		font-family: "Bebas";
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		font-size: 25px;
+		@media (max-width: $md4+px) {
+			font-size: 20px;
+		}
+	}
+	// .why-body-item-body__text
+	&__text {
+		font-family: 'PT Sans';
+		font-size: 15px;
+		padding: 0px 15px 0px 0px;
+		line-height: 25px;
+	}
+}
+//=================================================================================================================================================================
+
+.contacts {
+	padding: 80px 0px 0px 0px;
+	@media (max-width: $md2+px) {
+		padding: 30px 0px 0px 0px;
+	}
+}
+.contacts__title {
+	font-family: 'Bebas';
+	font-size: 50px;
+	line-height: 25px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin: 0px 0px 30px 0px;
+}
+.contacts-body {
+	@include flexbox();
+	flex-wrap: wrap;
+	// .contacts-body__column
+	&__column {
+		flex: 0 0 50%;
+		margin: 0px 0px 25px 0px;
+		@media (max-width: $md3+px) {
+			flex: 1 1 100%;
+		}
+	}
+	// .contacts-body__item
+	&__item {
+		color: #000;
+		display: inline-block;
+		line-height: 27px;
+		padding: 0px 0px 0px 35px;
+		font-family: "PT Sans";
+	}
+	// .contacts-body__item--1
+	&__item--1 {
+		background: url("../img/06.png") left no-repeat;
+	}
+	// .contacts-body__item--2
+	&__item--2 {
+		background: url("../img/08.png") left no-repeat;
+	}
+	// .contacts-body__item--3
+	&__item--3 {
+		background: url("../img/07.png") left no-repeat;
+	}
+}
+.contacts-social {
+	@include flexbox();
+	// .contacts-social__item
+	&__item {
+		margin: 0px 30px 0px 0px;
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+.contacts-content {
+	@include flexbox();
+	background-color: #000;
+	@media (max-width: $md2+px) {
+		display: block;
+	}
+	// .contacts-content__column
+	&__column {
+		flex: 0 0 50%;
+	}
+	// .contacts-content__map
+	&__map {
+		height: 100%;
+		@media (max-width: $md2+px) {
+			height: 300px;
+		}
+	}
+}
+.contacts-content-form {
+	padding: 55px 60px;
+	@media (max-width: $md2+px) {
+		padding: 30px;
+	}
+	// .contacts-content-form__title
+	&__title {
+		font-family: "Bebas";
+		font-size: 25px;
+		line-height: 25px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #ffffff;
+		margin: 0px 0px 30px 0px;
+	}
+	// .contacts-content-form__body
+	&__body {
+		max-width: 375px;
+		@media (max-width: $md2+px) {
+			max-width: none;
+		}
+	}
+	// .contacts-content-form__btn
+	&__btn {}
+}
+.contacts-content-form-line {
+	margin: 0px 0px 25px 0px;
+}
+
+//</ОСНОВНОЙ БЛОК>=================================================================================================================================================
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙБ ФОРМ И ГОТОВЫХ КЛАССОВ>==========================================================================================================
+@import "ui.scss";
+@import "forms.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙБ ФОРМ И ГОТОВЫХ КЛАССОВ>==========================================================================================================
+

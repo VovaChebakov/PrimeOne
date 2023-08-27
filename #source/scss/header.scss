@@ -1,0 +1,132 @@
+.header {
+	margin: 0px 0px 25px 0px;
+	// .header__content
+	&__content {
+		@include flexbox();
+		margin: 30px 0px 0px 0px;
+		@media (max-width: $mw+px) {
+			display: block;
+		}
+	}
+	// .header__column
+	&__column {
+		margin: 0px 60px 0px 0px;
+		@media (max-width: $mw+px) {
+			display: flex;
+			justify-content: center;
+			margin: 20px 0px 0px 0px;
+		}
+		@media (max-width: $md3+px) {
+			display: block;
+		}
+	}
+	// .header__language
+	&__language {
+		@include flexbox();
+		font-family: 'Bebas';
+		font-size: 14px;
+		line-height: 25px;
+		text-transform: uppercase;
+		margin: 0px 0px 35px 3px;
+		letter-spacing: 0.1em;
+		li {
+			cursor: pointer;
+			margin: 0px 20px 0px 0px;
+			&:active {
+				background-color: #000;
+				color: #fff;
+			}
+		}
+		@media (max-width: $mw+px) {
+			justify-content: center;
+			margin: 0px 60px 0px 0px;
+		}
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+	// .header__menu
+	&__menu {
+		@include flexbox();
+		font-size: 15px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		li {
+			margin: 0px 45px 0px 0px;
+			&:last-child {
+				margin: 0;
+			}
+			a {
+				color: #000;
+				transition: all 0.2s ease 0s;
+				&:hover {
+					color: #161162;
+				}
+			}
+		}
+		@media (max-width: $mw+px) {
+			justify-content: center;
+		}
+	}
+	// .header__text
+	&__text {
+		margin: 23px 0px 15px 0px;
+		text-align: center;
+		font-family: 'Bebas';
+		font-size: 10px;
+		line-height: 25px;
+		text-transform: uppercase;
+		letter-spacing: 1.0em;
+		&:first-child {
+			margin: 0px 0px 15px 0px;
+		}
+		&:last-child {
+			margin: 23px 0px 0px 0px;
+		}
+		span {
+			letter-spacing: 0.34em;
+		}
+		@media (max-width: $mw+px) {
+			display: flex;
+			align-items: center;
+			margin: 0px 0px 0px 20px;
+			&:first-child {
+				margin: 0px 20px 0px 0px;
+			}
+		}
+		@media (max-width: $md3+px) {
+			display: block;
+			text-align: center;
+			margin: 0;
+		}
+	}
+	// .header__logo
+	&__logo {
+		@media (max-width: $mw+px) {
+			@include flexbox();
+			justify-content: center;
+		}
+	}
+	// .header__ordering
+	&__ordering {
+		margin: 0px 0px 35px 0px;
+		@include flexbox();
+		justify-content: end;
+		text-decoration: underline;
+		font-size: 15px;
+		line-height: 25px;
+		font-weight: 400;
+		text-transform: uppercase;
+		cursor: pointer;
+		@media (max-width: $mw+px) {
+			justify-content: center;
+			margin: 0px 70px 0px 0px;
+		}
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+}
+.container {
+}

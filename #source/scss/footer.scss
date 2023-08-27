@@ -1,0 +1,28 @@
+.footer {
+	&__content {
+		@include flexbox();
+		align-items: center;
+		justify-content: space-between;
+		margin: 30px 0px 30px 0px;
+		@media (max-width: $md3+px) {
+			display: block;
+			text-align: center;
+		}
+	}
+	// .footer__text
+	&__text {
+		font-family: 'PT Sans';
+		font-size: 15px;
+		line-height: 25px;
+		color: #4d4d4d;
+		a {
+			text-decoration: underline;
+			color: #4d4d4d;
+		}
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 25px 0px;
+		}
+	}
+	// .footer__image
+	&__image {}
+}
